@@ -25,11 +25,12 @@ jobs:
           registry: docker.pkg.github.com
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - name: Build and push Docker images
+      - name: Build Docker image
         uses: docker/build-push-action@v2.0.1
         with:
-          push: true
-          tags: asynchttp-hello:latest
+          tags: docker.pkg.github.com/pere3/asynchttp-hello/app:latest
           secrets: |
             GIT_AUTH_TOKEN=${{ secrets.MYTOKEN }}
+      - name: Push Docker image
+        run: docker push docker.pkg.github.com/pere3/asynchttp-hello/app:latest
 
