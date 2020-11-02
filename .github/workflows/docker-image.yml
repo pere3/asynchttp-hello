@@ -14,5 +14,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag asynchttp-hello
+    - name: Build and push Docker images
+      uses: docker/build-push-action@v2.0.1
+
