@@ -3,7 +3,7 @@ import socket
 
 async def handle(request):
     hostname = socket.gethostname()
-    text = f'Hello from ${hostname}'
+    text = f'Hello from {hostname}'
     return web.Response(text=text)
 
 app = web.Application()
