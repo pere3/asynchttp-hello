@@ -12,3 +12,4 @@ RUN pip install -r requirements.txt -f /wheels && rm -rf /wheels && rm -rf /root
 COPY server.py .
 CMD ["python", "server.py"]
 EXPOSE 8080
+LABEL org.opencontainers.image.source https://github.com/pere3/asynchttp-hello
